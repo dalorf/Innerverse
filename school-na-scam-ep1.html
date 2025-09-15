@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond "School Na Scam" - The Series Begins - The Inner Verse Blog</title>
+    <meta name="description" content="Welcome to 'Beyond School Na Scam' - a 12-part series that will transform how you think about education and success in Nigeria. Every Tuesday for the next 3 months, we're decoding the new rules of the game.">
+    <link rel="icon" href="../data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 30%, #ffffff 100%);
+            color: #1a365d;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1a365d;
+            text-decoration: none;
+        }
+
+        .logo-verse {
+            color: #dc3545;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a365d;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #dc3545;
+        }
+
+        .back-to-blog {
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .back-to-blog:hover {
+            background: #b02a37;
+            color: white;
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 8rem 0 4rem;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #6b7280;
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+            border-radius: 15px;
+            margin: 0 auto 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.4;
+        }
+
+        .article-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin: 2rem 0 0.8rem;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        .article-content blockquote {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #1a365d;
+        }
+
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        /* Custom styled sections */
+        .three-pillars {
+            display: grid;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 1.5rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #f9fafb;
+            font-family: system-ui, sans-serif;
+        }
+
+        .pill {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .pill .emoji {
+            font-size: 1.5rem;
+            margin-right: .5rem;
+        }
+
+        .pill h3 {
+            display: inline;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .pill p {
+            margin: .5rem 0 0;
+            color: #374151;
+            font-size: .95rem;
+        }
+
+        .three-pillars .note {
+            font-size: .9rem;
+            color: #6b7280;
+            margin-top: 1rem;
+        }
+
+        .degree-matters {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #fdfdfd;
+            border: 1px solid #e5e7eb;
+            font-family: system-ui, sans-serif;
+        }
+
+        .degree-matters h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: #111827;
+        }
+
+        .degree-matters p {
+            font-size: .95rem;
+            color: #374151;
+            margin: .5rem 0 1rem;
+        }
+
+        .degree-matters ul {
+            margin: 0 0 1rem 1.2rem;
+            padding: 0;
+            color: #1f2937;
+            font-size: .95rem;
+        }
+
+        .degree-matters li {
+            margin-bottom: .5rem;
+        }
+
+        .degree-matters .note {
+            font-size: .95rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .insight {
+            margin: 1.5rem auto;
+            max-width: 650px;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid #7c3aed;
+            background: #f9fafb;
+            color: #374151;
+            font-style: italic;
+            font-size: .95rem;
+            border-radius: 6px;
+        }
+
+        .advice-list {
+            max-width: 700px;
+            margin: 1.2rem auto;
+            padding-left: 1.2rem;
+            font-family: system-ui, sans-serif;
+            color: #374151;
+            font-size: .95rem;
+            line-height: 1.5;
+        }
+
+        .advice-list li {
+            margin-bottom: .6rem;
+        }
+
+        .bottom-line, .whats-next, .discussion {
+            max-width: 720px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            font-family: system-ui, sans-serif;
+        }
+
+        .bottom-line h2, .whats-next h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #111827;
+        }
+
+        .bottom-line p, .whats-next p, .discussion p {
+            font-size: .95rem;
+            color: #374151;
+            margin: .5rem 0;
+        }
+
+        .whats-next ul {
+            margin: .5rem 0 1rem 1.2rem;
+            padding: 0;
+            font-size: .95rem;
+            color: #1f2937;
+        }
+
+        .whats-next li {
+            margin-bottom: .5rem;
+        }
+
+        .cta {
+            margin-top: 1rem;
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: .5rem 1rem;
+            border-radius: 6px;
+            background: #7c3aed;
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 500;
+            transition: background .2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #5b21b6;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px dashed #d1d5db;
+            margin: 2rem auto;
+            max-width: 720px;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            max-width: 720px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            font-family: system-ui, sans-serif;
+        }
+
+        .comments-section h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #111827;
+            font-size: 1.25rem;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comment-form h4 {
+            margin: 0 0 1rem;
+            font-size: 1.1rem;
+            color: #111827;
+        }
+
+        .comment-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .comment {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 3px solid #7c3aed;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .comment-date {
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        .comment-text {
+            color: #374151;
+            line-height: 1.5;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Call-to-Action */
+        .article-cta {
+            background: #1a365d;
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .article-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Navigation Between Posts */
+        .post-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .nav-post {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .nav-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .nav-direction {
+            font-size: 0.9rem;
+            color: #dc3545;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-post-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a365d;
+            line-height: 1.3;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .article-content {
+                padding: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .post-navigation {
+                grid-template-columns: 1fr;
+            }
+
+            .article-cta {
+                padding: 2rem;
+            }
+
+            .comment-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <img src="../logo.png" alt="The Inner Verse Logo">
+                </div>
+                <a href="../index.html" class="logo-text">
+                    THE INNER <span class="logo-verse">VERSE</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#sessions">Sessions</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../blog.html" class="back-to-blog">← Back to Blog</a></li>
+                <li><a href="../index.html#contact">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <header class="article-header">
+                <div class="container">
+                    <div class="article-category">Education & Career</div>
+                    
+                    <h1 class="article-title">Beyond "School Na Scam" Episode 1</h1>
+                    <h2 class="article-subtitle">The New Reality of Education in Nigeria</h2>
+                    
+                    <div class="article-meta">
+                        <span>📅 October 1, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                        <span>👁️ 30 views</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="container">
+                <div class="featured-image">
+                    <!-- If you have the headers.png image, uncomment the line below and remove the emoji -->
+                    <img src="../images/headers.png" alt="Education Reality Article">
+                    
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="article-content">
+                    <p><strong>Welcome to "Beyond School Na Scam" - a 12-part series that will transform how you think about education and success in Nigeria. Every Tuesday for the next 3 months, we're decoding the new rules of the game.</strong></p>
+
+                    <h2>Look, I have to tell you something that might hurt.</h2>
+                    <p>"School na scam!" I hear this everywhere. Your WhatsApp status, Twitter bio, that heated argument with your uncle last Christmas. Hell, I've said it myself when my experience studying at LASU proved frustrating. But I was in a conversation, and I sat next to two guys. One had a degree in Engineering from Covenant, the other dropped out of OOU to sell phone accessories at Computer Village. Guess who was complaining about money? The engineer was doing Uber weekends to supplement his ₦180k salary. The "dropout" just bought his second car. That conversation kept me awake for three nights. Here's what I realized: we're all fighting the wrong battle.</p>
+
+                    <p><strong>Numbers That Will Shock You</strong></p>
+                    <p>Let me hit you with facts your lecturers won't tell you:</p>
+                    <p>•	600,000 graduates are produced annually in Nigeria</p>
+                    <p>•	Graduate unemployment jumped from 1% in 1974 to 28.8% in 2020</p>
+                    <p><strong>The system overproduces certificates but underproduces opportunities.</strong></p>
+
+                    <h3>What Really Changed</h3>
+                    <p>A man could have walked into First Bank in 1987 with his HND, got interviewed on the spot, and started on Monday. His salary could rent a flat in Ikeja and buy a car. That world is dead.</p>
+                    <p>The Old Rules (1970s-90s): Degree → Automatic Job → Career Growth</p>
+                    <p>The New Reality (Now): Degree Alone = Expensive Toilet Paper</p>
+                    <p>But here's where most people get it wrong - they think education is now useless. <strong>No. Education just changed its job description.</strong> Instead of being your ticket to success, it's now your ID card for certain opportunities.</p>
+
+                    <h2>The Strategy That Actually Works</h2>
+                    <h4>Let me give you a few typographies</h4>
+
+                    <ul>
+                        <li><strong>Chike</strong> - Computer Science graduate, FUTO. Learned web development on YouTube during COVID. Now makes $2,000 monthly working remotely for US companies. His degree got him past international HR filters. His skills pay the bills.</li>
+                        <li><strong>Adunni</strong> - Mass Comm, OAU. Started a food blog during service year. Makes ₦500k per sponsored post with 100k Instagram followers. Her degree helped with media credibility. Her content creation skills built her audience.</li>
+                        <li><strong>Emeka</strong> - Dropped out of Engineering. Makes good money importing phones but can't get certain contracts because companies require degree-holder certificates. Going back to finish - not to learn, but for the paper.</li>
+                    </ul>
+
+                    <h3>Notice the pattern? Smart people use the Triple Strategy:</h3>
+                    
+                    <section class="three-pillars">
+                        <div class="pill">
+                            <span class="emoji">📋</span>
+                            <h3>Paper (Degree)</h3>
+                            <p>Gets you in certain rooms (doesn't guarantee the deal)</p>
+                        </div>
+
+                        <div class="pill">
+                            <span class="emoji">🧠</span>
+                            <h3>Brain (Skills)</h3>
+                            <p>Actually makes you money</p>
+                        </div>
+
+                        <div class="pill">
+                            <span class="emoji">🤝</span>
+                            <h3>Network (Connections)</h3>
+                            <p>Accelerates everything else</p>
+                        </div>
+
+                        <p class="note">
+                            Most failed graduates focused only on <strong>Paper</strong>.  
+                            Most "school na scam" people focus only on <strong>Brain</strong>.  
+                            Winners balance all three.
+                        </p>
+                    </section>
+
+                    <section class="degree-matters">
+                        <h2>Where Degrees Still Matter</h2>
+                        <p>Before you burn your certificates:</p>
+                        <ul>
+                            <li><strong>Politics:</strong> Try running for governor without a degree</li>
+                            <li><strong>International opportunities:</strong> Visa applications, UN jobs, studying abroad</li>
+                            <li><strong>Professional services:</strong> Law, medicine, architecture, engineering</li>
+                            <li><strong>Family peace:</strong> Your mother won't rest until you have that certificate</li>
+                        </ul>
+                        <p class="note">Is it fair? <strong>No.</strong> Is it reality? <strong>Yes.</strong></p>
+                    </section>
+
+                    <blockquote class="insight">
+                        "A degree may not guarantee success, but in certain rooms it still speaks louder than silence. 
+                        Use it as a key, not a crutch."
+                    </blockquote>
+
+                    <h3>Your Next Moves</h3>
+                    <ul class="advice-list">
+                        <li>If you're in school: Keep going, learn practical skills alongside, network intentionally</li>
+                        <li>If you're a fresh graduate: Use your degree to get any reasonable job, build skills, leverage your network</li>
+                        <li>If you dropped out: Stop feeling bad, build undeniable competence, consider going back if strategically necessary</li>
+                    </ul>
+
+                    <section class="bottom-line">
+                        <h2>The Bottom Line</h2>
+                        <p><strong>"School na scam"</strong> is incomplete analysis.</p>
+                        <p><em>Complete analysis:</em> The rules changed, but people are still playing by old rules.</p>
+                        <p>Your degree won't automatically make you successful, but throwing it away closes doors you don't know exist.</p>
+                        <p><strong>The winners</strong> use education strategically as one tool in the toolkit, not the entire toolkit.</p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <section class="whats-next">
+                        <h2>What's Next</h2>
+                        <p><strong>Episode 2 (Next Tuesday):</strong> <em>"The Skills That Actually Pay in Nigeria"</em></p>
+                        <ul>
+                            <li>Exactly which skills pay ₦500k+ monthly right now</li>
+                            <li>How to develop them quickly</li>
+                            <li>Real case studies of successful transitions</li>
+                        </ul>
+                        <p><strong>Don't miss it</strong> this could change your financial trajectory completely.</p>
+                        <div class="cta">
+                            <button onclick="subscribeToNewsletter()" class="btn">SUBSCRIBE</button>
+                            <button onclick="shareArticle()" class="btn">SHARE</button>
+                            <button onclick="scrollToComments()" class="btn">COMMENT BELOW</button>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <section class="discussion">
+                        <p><strong>What's your biggest frustration with the current education system?</strong></p>
+                        <p>Drop a comment, I read every single one.</p>
+                        
+                        <!-- Comments Section -->
+                        <div class="comments-section" id="comments-section">
+                            <h3>Comments</h3>
+                            
+                            <!-- Comment Form -->
+                            <div class="comment-form">
+                                <h4>Leave a Comment</h4>
+                                <form id="commentForm">
+                                    <div class="form-row">
+                                        <input type="text" id="commentName" placeholder="Your Name" required>
+                                        <input type="email" id="commentEmail" placeholder="Your Email (won't be published)" required>
+                                    </div>
+                                    <textarea id="commentText" placeholder="Share your thoughts..." rows="4" required></textarea>
+                                    <button type="submit" class="btn">Post Comment</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Comments Display -->
+                            <div class="comments-list" id="commentsList">
+                                <!-- Sample comment to show structure -->
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <strong class="comment-author">Sample Reader</strong>
+                                        <span class="comment-date">2 hours ago</span>
+                                    </div>
+                                    <p class="comment-text">This is exactly what I needed to hear! The degree vs skills debate has been keeping me up at night.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="article-cta">
+                    <h3>Ready to Find Your Clarity?</h3>
+                    <p>Take the first step towards transforming confusion into purpose with our free virtual clarity session.</p>
+                    <a href="../index.html#contact" class="cta-button">Book Free Session</a>
+                </div>
+
+                <!-- Navigation to Other Posts -->
+                <div class="post-navigation">
+                    <a href="#" class="nav-post">
+                        <div class="nav-direction">← Previous</div>
+                        <div class="nav-post-title">Coming Soon: More Insights</div>
+                    </a>
+                    <a href="#" class="nav-post">
+                        <div class="nav-direction">Next →</div>
+                        <div class="nav-post-title">Episode 2: Skills That Actually Pay</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    THE INNER <span style="color: #dc3545;">VERSE</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../index.html#sessions">Sessions</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <p>&copy; 2025 The Inner Verse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter Subscription Function
+        function subscribeToNewsletter() {
+            const email = prompt("Enter your email to subscribe to our newsletter:");
+            if (email && email.includes('@')) {
+                alert(`Thank you! We've added ${email} to our newsletter. You'll receive updates about new episodes and insights.`);
+            } else if (email) {
+                alert("Please enter a valid email address.");
+            }
+        }
+
+        // Share Article Function
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out this insightful article about education and success in Nigeria!',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Article link copied to clipboard! Share it with your friends.");
+                }).catch(() => {
+                    const shareText = `Check out: "${document.title}" - ${window.location.href}`;
+                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+                    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+                    
+                    const choice = confirm("Share via WhatsApp? (Cancel for Twitter)");
+                    if (choice) {
+                        window.open(whatsappUrl, '_blank');
+                    } else {
+                        window.open(twitterUrl, '_blank');
+                    }
+                });
+            }
+        }
+
+        // Scroll to Comments Function
+        function scrollToComments() {
+            document.getElementById('comments-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Comment System
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('schoolNaScamComments') || '[]');
+            displayComments(comments);
+        }
+
+        function saveComments(comments) {
+            localStorage.setItem('schoolNaScamComments', JSON.stringify(comments));
+        }
+
+        function displayComments(comments) {
+            const existingComments = commentsList.querySelectorAll('.comment:not(.sample)');
+            existingComments.forEach(comment => comment.remove());
+            
+            comments.forEach(comment => {
+                const commentElement = createCommentElement(comment);
+                commentsList.appendChild(commentElement);
+            });
+        }
+
+        function createCommentElement(comment) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `
+                <div class="comment-header">
+                    <strong class="comment-author">${escapeHtml(comment.name)}</strong>
+                    <span class="comment-date">${getTimeAgo(comment.timestamp)}</span>
+                </div>
+                <p class="comment-text">${escapeHtml(comment.text)}</p>
+            `;
+            return commentDiv;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const commentTime = new Date(timestamp);
+            const diffMinutes = Math.floor((now - commentTime) / (1000 * 60));
+            
+            if (diffMinutes < 1) return 'Just now';
+            if (diffMinutes < 60) return `${diffMinutes} minutes ago`;
+            if (diffMinutes < 1440) return `${Math.floor(diffMinutes / 60)} hours ago`;
+            return `${Math.floor(diffMinutes / 1440)} days ago`;
+        }
+
+        if (commentForm) {
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('commentName').value.trim();
+                const email = document.getElementById('commentEmail').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+                
+                if (name && email && text) {
+                    const comments = JSON.parse(localStorage.getItem('schoolNaScamComments') || '[]');
+                    const newComment = {
+                        name: name,
+                        email: email,
+                        text: text,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    comments.unshift(newComment);
+                    saveComments(comments);
+                    displayComments(comments);
+                    
+                    commentForm.reset();
+                    alert('Thank you for your comment! It has been posted.');
+                    
+                    setTimeout(() => {
+                        commentsList.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComments();
+        });
+    </script>
+</body>
+</html>

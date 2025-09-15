@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Inner Verse - Virtual Clarity Session</title>
+    <meta name="description" content="Break through mental barriers with virtual clarity sessions. Free during launch. Transform confusion into purpose with expert guidance.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 30%, #ffffff 100%);
+            color: #1a365d;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1a365d;
+        }
+
+        .logo-verse {
+            color: #dc3545;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a365d;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #dc3545;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #1a365d;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(220, 53, 69, 0.1);
+            border: 2px solid #dc3545;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #dc3545;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            margin-bottom: 2rem;
+        }
+
+        .title-virtual {
+            display: block;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            color: #1a365d;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-clarity {
+            display: block;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            color: #dc3545;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-session {
+            display: block;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 300;
+            color: #6b7280;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 400;
+            color: #4a5568;
+            margin: 3rem auto;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
+            margin: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 53, 69, 0.4);
+        }
+
+        /* Countdown Timer */
+        .countdown-timer {
+            text-align: center;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 15px;
+            border: 2px solid #dc3545;
+            max-width: 500px;
+        }
+
+        .countdown-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 80px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .countdown-item span:first-child {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #dc3545;
+        }
+
+        .countdown-item span:last-child {
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1a365d;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: #dc3545;
+        }
+
+        .pricing-card.featured {
+            border-color: #dc3545;
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .pricing-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            color: #6b7280;
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+        }
+
+        .price-current {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #dc3545;
+        }
+
+        .price-naira {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.3rem 0;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: #dc3545;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 6rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #1a365d, #2b77ad);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+
+        .service-card p {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Hidden sections */
+        .about {
+            display: none;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .registration-form {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #dc3545;
+        }
+
+        .contact-alternatives {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-alternatives p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn.whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .contact-btn.whatsapp:hover {
+            background: #1ea952;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn.email {
+            background: #1a365d;
+            color: white;
+        }
+
+        .contact-btn.email:hover {
+            background: #2b77ad;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question h4 {
+            color: #1a365d;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #dc3545;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 1.5rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Digital Library */
+        .library {
+            padding: 6rem 0;
+            background: #1a365d;
+            color: white;
+        }
+
+        .library .section-title {
+            color: white;
+        }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .library-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .library-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .library-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .library-item h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .library-item p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .testimonial-role {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: #1a365d;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #b02a37;
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .sticky-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220, 53, 69, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4); }
+            50% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.6), 0 0 0 10px rgba(220, 53, 69, 0.1); }
+            100% { box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .pricing-grid,
+            .services-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .countdown-display {
+                gap: 0.5rem;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.5rem;
+            }
+
+            .registration-form {
+                margin: 2rem 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .sticky-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="The Inner Verse Logo">
+                </div>
+                <div class="logo-text">
+                    THE INNER <span class="logo-verse">VERSE</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="#contact">Register</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-badge fade-in">✨ UNLOCK YOUR INNER TRUTH</div>
+                
+                <div class="hero-title">
+                    <span class="title-virtual fade-in">VIRTUAL</span>
+                    <span class="title-clarity fade-in">CLARITY</span>
+                    <span class="title-session fade-in">SESSION</span>
+                </div>
+
+                <p class="hero-subtitle fade-in">Break through the digital noise and mental barriers. Discover your authentic self and unlock the clarity that transforms your life from within.</p>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-timer fade-in">
+                    <div class="countdown-text">⏰ Free Access Ends In:</div>
+                    <div class="countdown-display">
+                        <div class="countdown-item">
+                            <span id="days">30</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span>Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span>Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="cta-button fade-in">Begin Your Journey</a>
+            </div>
+        </section>
+
+        <section class="pricing" id="sessions">
+            <div class="container">
+                <h2 class="section-title fade-in">CHOOSE YOUR PATH</h2>
+                <p class="section-subtitle fade-in">All sessions are currently FREE as we launch The Inner Verse experience</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card fade-in">
+                        <div class="pricing-badge">FREEMIUM</div>
+                        <h3 class="pricing-title">Single Session</h3>
+                        <div class="pricing-price">
+                            <span class="price-original">$15</span>
+                            <span class="price-current">FREE</span>
+                            <div class="price-naira">₦0 (was ₦25,000)</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>90-minute clarity session</li>
+                            <li>Personal breakthrough guidance</li>
+                            <li>Action plan creation</li>
+                            <li>24h follow-up support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card featured fade-in">
+                        <div class="pricing-badge">MOST POPULAR</div>
+                        <h3 class="pricing-title">Three Session Package</h3>
+                        <div class="pricing-price">
+                            <span class="price-original">$40</span>
+                            <span class="price-current">FREE</span>
+                            <div class="price-naira">₦0 (was ₦65,000)</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>3x 90-minute sessions</li>
+                            <li>Progressive clarity building</li>
+                            <li>Comprehensive life mapping</li>
+                            <li>Ongoing support between sessions</li>
+                            <li>Digital library access</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Start Package</a>
+                    </div>
+
+                    <div class="pricing-card fade-in">
+                        <div class="pricing-badge">FREEMIUM</div>
+                        <h3 class="pricing-title">Weekly Group</h3>
+                        <div class="pricing-price">
+                            <span class="price-original">$30</span>
+                            <span class="price-current">FREE</span>
+                            <div class="price-naira">₦0 (was ₦50,000)</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Weekly group sessions</li>
+                            <li>Community support</li>
+                            <li>Shared breakthrough experiences</li>
+                            <li>Group accountability</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Join Group</a>
+                    </div>
+
+                    <div class="pricing-card fade-in">
+                        <div class="pricing-badge">INTENSIVE</div>
+                        <h3 class="pricing-title">Monthly Intensive</h3>
+                        <div class="pricing-price">
+                            <span class="price-original">$150</span>
+                            <span class="price-current">FREE</span>
+                            <div class="price-naira">₦0 (was ₦245,000)</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>4 weekly intensive sessions</li>
+                            <li>Deep transformation program</li>
+                            <li>Personal clarity roadmap</li>
+                            <li>Unlimited support access</li>
+                            <li>Exclusive resources</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Go Intensive</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title fade-in">OUR SERVICES</h2>
+                <div class="services-grid">
+                    <div class="service-card slide-in-left">
+                        <div class="service-icon">👥</div>
+                        <h3>Group Sessions</h3>
+                        <p>Join like-minded individuals on a shared journey of discovery and transformation in our supportive group environment.</p>
+                        <a href="#contact" class="cta-button">Register for Groups</a>
+                    </div>
+                    
+                    <div class="service-card slide-in-right">
+                        <div class="service-icon">🎯</div>
+                        <h3>Personal 1:1 Sessions</h3>
+                        <p>Experience personalized breakthrough sessions tailored specifically to your unique challenges and goals.</p>
+                        <a href="#contact" class="cta-button">Book 1:1 Session</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title fade-in">REGISTER FOR FREE SESSION</h2>
+                <p class="section-subtitle fade-in">Take the first step towards clarity. All sessions are currently FREE during our launch period.</p>
+                
+                <form class="registration-form fade-in" id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">WhatsApp/Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+234 xxx xxx xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="sessionType">Preferred Session Type *</label>
+                            <select id="sessionType" name="sessionType" required>
+                                <option value="">Select Session Type</option>
+                                <option value="single">Single Session (90 minutes)</option>
+                                <option value="three-pack">Three Session Package</option>
+                                <option value="group">Weekly Group Sessions</option>
+                                <option value="intensive">Monthly Intensive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals">What do you hope to achieve? (Optional)</label>
+                        <textarea id="goals" name="goals" rows="3" placeholder="Tell us about your current challenges or what you're looking to gain clarity on..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">BOOK MY FREE SESSION</button>
+                </form>
+                
+                <!-- Alternative Contact Options -->
+                <div class="contact-alternatives fade-in">
+                    <p>Prefer to reach out directly?</p>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/2348147732687?text=Hi! I'd like to book a free clarity session" class="contact-btn whatsapp" target="_blank">
+                            💬 WhatsApp Us
+                        </a>
+                        <a href="mailto:deyoungprofcreativehub@gmail.com?subject=Free Session Inquiry" class="contact-btn email">
+                            📧 Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title fade-in">FREQUENTLY ASKED</h2>
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h4>How do online sessions work?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our virtual sessions are conducted via Zoom or your preferred video platform. You'll receive a private link and detailed preparation guide 24 hours before your session. All you need is a quiet space and stable internet connection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h4>Are the sessions really free?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We're offering completely free sessions during our launch period to build our community and gather testimonials. No hidden fees, no credit card required. This is our gift to you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h4>What if I miss a scheduled session?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Life happens! Just give us 24 hours notice and we'll reschedule at no cost. We offer flexible timing to accommodate your schedule, including evening and weekend slots.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h4>What should I expect from my first session?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your first session focuses on understanding your current situation, identifying mental blocks, and creating a clear vision for your path forward. You'll leave with actionable insights and a personalized clarity plan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="library" id="library">
+            <div class="container">
+                <h2 class="section-title fade-in">DIGITAL LIBRARY</h2>
+                <p class="section-subtitle fade-in">Access our curated collection of transformational resources</p>
+                
+                <div class="library-grid">
+                    <div class="library-item fade-in">
+                        <div class="library-icon">📚</div>
+                        <h4>Clarity Guides</h4>
+                        <p>Step-by-step guides to navigate mental fog and find your authentic path forward.</p>
+                    </div>
+                    
+                    <div class="library-item fade-in">
+                        <div class="library-icon">🎧</div>
+                        <h4>Audio Sessions</h4>
+                        <p>Guided meditations and clarity exercises you can access anytime, anywhere.</p>
+                    </div>
+                    
+                    <div class="library-item fade-in">
+                        <div class="library-icon">📝</div>
+                        <h4>Workbooks</h4>
+                        <p>Interactive exercises and reflection tools to deepen your self-discovery journey.</p>
+                    </div>
+                    
+                    <div class="library-item fade-in">
+                        <div class="library-icon">🎥</div>
+                        <h4>Video Library</h4>
+                        <p>Inspirational talks and practical workshops to support your ongoing growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title fade-in">TRANSFORMATIONS</h2>
+                <p class="section-subtitle fade-in">Coming soon - Real stories from people who found their inner clarity</p>
+                
+                <div class="testimonial-grid">
+                    <!-- Testimonials will be added here once we have real client feedback -->
+                    <div class="testimonial-card fade-in" style="opacity: 0.5; border: 2px dashed #dc3545;">
+                        <p class="testimonial-text">Your transformation story could be here...</p>
+                        <div class="testimonial-author">Your Name</div>
+                        <div class="testimonial-role">Your Success Story</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2 class="fade-in">STAY CONNECTED</h2>
+                <p class="fade-in">Get weekly clarity insights and be first to know about new resources</p>
+                <form class="newsletter-form fade-in" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">GET CLARITY GUIDE</button>
+                </form>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
+                    📖 Free "5-Day Clarity Challenge" PDF when you subscribe
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky CTA -->
+    <a href="#contact" class="sticky-cta" id="stickyCta">
+        🚀 Book Free Session
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    THE INNER <span style="color: #dc3545;">VERSE</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#sessions">Sessions</a>
+                    <a href="/blog.html">Blog</a>
+                    <a href="#library">Library</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <p>&copy; 2025 The Inner Verse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Fixed Countdown Timer - Set to exactly 30 days from now
+        function updateCountdown() {
+            // Set target date to exactly 30 days from now
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30);
+            
+            const now = new Date();
+            const difference = targetDate - now;
+            
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+            } else {
+                // Timer expired
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Form Submission
+        const registrationForm = document.getElementById('registrationForm');
+        if (registrationForm) {
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                const message = `🌟 NEW CLARITY SESSION REGISTRATION
+
+📝 *Details:*
+• Name: ${data.fullName}
+• Email: ${data.email}
+• Phone: ${data.phone}
+• Session Type: ${data.sessionType}
+• Goals: ${data.goals || 'Not specified'}
+
+💫 Ready to begin their transformation journey!`;
+
+                const whatsappUrl = `https://wa.me/2348147732687?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                alert('Thank you for registering! We\'ll contact you within 24 hours to schedule your free session.');
+                this.reset();
+            });
+        }
+
+        // Newsletter Signup - Ready for email integration
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // TODO: Integrate with email service (Mailchimp, ConvertKit, etc.)
+                // For now, show success message
+                alert(`Thank you! We've added ${email} to our mailing list. You'll receive your free Clarity Guide shortly!`);
+                this.reset();
+            });
+        }
+
+        // Sticky CTA behavior
+        let lastScrollTop = 0;
+        const stickyCta = document.getElementById('stickyCta');
+
+        if (stickyCta) {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 500) {
+                    stickyCta.style.transform = 'translateY(100px)';
+                } else {
+                    stickyCta.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+        }
+    </script>
+</body>
+</html>

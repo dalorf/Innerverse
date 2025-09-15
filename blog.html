@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - The Inner Verse | Clarity & Personal Development Insights</title>
+    <meta name="description" content="Discover insights on mental clarity, personal development, and transformation. Expert articles to help you unlock your inner potential and find your authentic path.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 30%, #ffffff 100%);
+            color: #1a365d;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1a365d;
+        }
+
+        .logo-verse {
+            color: #dc3545;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a365d;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #dc3545;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #1a365d;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 8rem 0 4rem;
+            margin-top: 80px;
+            text-align: center;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .blog-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .blog-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search and Filter */
+        .blog-controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .search-filter-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #dc3545;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            font-size: 1.2rem;
+        }
+
+        .category-filter select {
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .category-filter select:focus {
+            outline: none;
+            border-color: #dc3545;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .featured-image-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+            color: white;
+            font-size: 4rem;
+        }
+
+        .featured-text {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-category {
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .featured-excerpt {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #dc3545 0%, #b02a37 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a365d, #2b77ad);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .image-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a365d, #2b77ad);
+            color: white;
+            font-size: 2rem;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .blog-date {
+            flex: 1;
+        }
+
+        .read-time {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        /* Coming Soon Articles - Template Style */
+        .blog-card.coming-soon {
+            opacity: 0.4 !important;
+            cursor: default;
+            position: relative;
+        }
+
+        .blog-card.coming-soon.visible {
+            opacity: 0.4 !important;
+        }
+
+        .blog-card.coming-soon::before {
+            content: 'TEMPLATE';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(220, 53, 69, 0.8);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .blog-card.coming-soon:hover {
+            transform: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: #1a365d;
+            color: white;
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+
+        .categories-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-count {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin: 4rem 0;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-text {
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #dc3545;
+        }
+
+        .newsletter-form button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #b02a37;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 4rem 0;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1a365d;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+
+            .search-filter-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 200px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .blog-controls {
+                padding: 1.5rem;
+            }
+
+            .featured-text {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="The Inner Verse Logo">
+                </div>
+                <div class="logo-text">
+                    THE INNER <span class="logo-verse">VERSE</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#sessions">Sessions</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Register</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-header">
+            <div class="container">
+                <h1 class="blog-title fade-in">INNER WISDOM</h1>
+                <p class="blog-subtitle fade-in">Insights on clarity, personal development, and transformation to help you unlock your authentic self</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="blog-controls fade-in">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search articles..." id="searchInput">
+                    </div>
+                    <div class="category-filter">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="clarity">Mental Clarity</option>
+                            <option value="personal-growth">Personal Growth</option>
+                            <option value="mindfulness">Mindfulness</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="relationships">Relationships</option>
+                            <option value="purpose">Finding Purpose</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+<!-- Featured Article -->
+            <article class="featured-article fade-in">
+                <div class="featured-badge">Featured</div>
+                <div class="featured-content">
+                    <div class="featured-image">
+                        <img src="images/headers.jpg" alt="School Na Scam Episode 1 Featured Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="featured-image-fallback" style="display: none;">📚</div>
+                    </div>
+                    <div class="featured-text">
+                        <div class="featured-category">Education & Career</div>
+                        <h2 class="featured-title">Beyond "School Na Scam" Episode 1: The New Reality of Education in Nigeria</h2>
+                        <p class="featured-excerpt">Welcome to our 12-part series that will transform how you think about education and success in Nigeria. We're decoding the new rules of the game and revealing the strategy that actually works in today's reality.</p>
+                        <div class="featured-meta">
+                            <span>📅 October 1, 2025</span>
+                            <span>⏱️ 5 min read</span>
+                            <span>👁️ 30 views</span>
+                        </div>
+                        <a href="posts/school-na-scam-ep1.html" class="read-more-btn">Read Full Article</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Grid -->
+            <section class="blog-grid">
+                <!-- Real Published Article -->
+                <article class="blog-card fade-in" onclick="window.location.href='posts/school-na-scam-ep1.html'">
+                    <div class="blog-image">
+                        <img src="images/headers.png" alt="School Na Scam Episode 1 Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">📚</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Education & Career</div>
+                        <h3 class="blog-card-title">Beyond "School Na Scam" Episode 1</h3>
+                        <p class="blog-excerpt">The new reality of education in Nigeria. We're decoding the new rules of the game and revealing the strategy that actually works...</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">October 1, 2025</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Coming Soon Articles -->
+                <article class="blog-card fade-in coming-soon">
+                    <div class="blog-image">
+                        <img src="images/self-discovery-header.jpg" alt="Self Discovery Article Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">🧠</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Personal Growth</div>
+                        <h3 class="blog-card-title">The Science of Self-Discovery: Understanding Your Inner Patterns</h3>
+                        <p class="blog-excerpt">Explore the psychological frameworks that help us understand our thoughts, behaviors, and emotional patterns... <em>(Coming Soon)</em></p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in coming-soon">
+                    <div class="blog-image">
+                        <img src="images/purpose-clarity-header.jpg" alt="Finding Purpose Article Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">🎯</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Finding Purpose</div>
+                        <h3 class="blog-card-title">From Confusion to Purpose: A Step-by-Step Transformation Guide</h3>
+                        <p class="blog-excerpt">Feeling lost or uncertain about your direction? This comprehensive guide will help you navigate from confusion to clarity... <em>(Coming Soon)</em></p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in coming-soon">
+                    <div class="blog-image">
+                        <img src="images/mindfulness-decisions-header.jpg" alt="Mindful Decision Making Article Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">🧘</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Mindfulness</div>
+                        <h3 class="blog-card-title">Mindful Clarity: How Presence Transforms Decision Making</h3>
+                        <p class="blog-excerpt">Learn how mindfulness practices can dramatically improve your ability to make clear, confident decisions... <em>(Coming Soon)</em></p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in coming-soon">
+                    <div class="blog-image">
+                        <img src="images/productivity-clarity-header.jpg" alt="Productivity Through Clarity Article Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">⚡</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Productivity</div>
+                        <h3 class="blog-card-title">Clear Mind, Clear Results: Productivity Through Mental Clarity</h3>
+                        <p class="blog-excerpt">Discover why mental clarity is the ultimate productivity hack and how to cultivate it for peak performance... <em>(Coming Soon)</em></p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="read-time">9 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card fade-in coming-soon">
+                    <div class="blog-image">
+                        <img src="images/authentic-relationships-header.jpg" alt="Authentic Relationships Article Header" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-fallback" style="display: none;">👫</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Relationships</div>
+                        <h3 class="blog-card-title">Authentic Connections: How Self-Clarity Improves Relationships</h3>
+                        <p class="blog-excerpt">Understanding yourself deeply is the foundation of building meaningful, authentic relationships with others... <em>(Coming Soon)</em></p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Newsletter CTA -->
+            <div class="newsletter-cta fade-in">
+                <h3 class="newsletter-title">Never Miss an Insight</h3>
+                <p class="newsletter-text">Get weekly clarity insights and be first to know about new articles and resources</p>
+                <form class="newsletter-form" id="blogNewsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">→</a>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="categories-title fade-in">Explore Topics</h2>
+                <div class="categories-grid">
+                    <div class="category-card fade-in" data-category="purpose">
+                        <div class="category-icon">🎯</div>
+                        <div class="category-name">Finding Purpose</div>
+                        <div class="category-count">15 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="productivity">
+                        <div class="category-icon">⚡</div>
+                        <div class="category-name">Productivity</div>
+                        <div class="category-count">10 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="relationships">
+                        <div class="category-icon">👫</div>
+                        <div class="category-name">Relationships</div>
+                        <div class="category-count">7 Articles</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    THE INNER <span style="color: #dc3545;">VERSE</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#sessions">Sessions</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="index.html#library">Library</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <p>&copy; 2025 The Inner Verse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        function filterArticles() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedCategory = categoryFilter.value.toLowerCase();
+
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+                const category = card.querySelector('.blog-category').textContent.toLowerCase();
+
+                const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+                const matchesCategory = selectedCategory === '' || category.includes(selectedCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterArticles);
+        categoryFilter.addEventListener('change', filterArticles);
+
+        // Category cards filtering
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                categoryFilter.value = category;
+                filterArticles();
+                
+                // Scroll to articles
+                document.querySelector('.blog-grid').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Newsletter signup
+        const blogNewsletterForm = document.getElementById('blogNewsletterForm');
+        if (blogNewsletterForm) {
+            blogNewsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // TODO: Integrate with email service
+                alert(`Thank you! We've added ${email} to our blog mailing list.`);
+                this.reset();
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+</body>
+</html>d fade-in" data-category="clarity">
+                        <div class="category-icon">🧠</div>
+                        <div class="category-name">Mental Clarity</div>
+                        <div class="category-count">12 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="personal-growth">
+                        <div class="category-icon">🌱</div>
+                        <div class="category-name">Personal Growth</div>
+                        <div class="category-count">18 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="mindfulness">
+                        <div class="category-icon">🧘</div>
+                        <div class="category-name">Mindfulness</div>
+                        <div class="category-count">8 Articles</div>
+                    </div>
+                    
+                    <div class="category-car
