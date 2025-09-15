@@ -8,4 +8,4 @@ A personal development and clarity coaching website featuring blog articles and 
 - Articles in /posts/ folder
 
 ## Live Site:
-Visit: https://yourusername.github.io/the-inner-verse-website
+Visit:https://dalorf.github.io/Innerverse/
