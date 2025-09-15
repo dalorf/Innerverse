@@ -164,26 +164,45 @@
             gap: 0.5rem;
         }
 
-        /* Featured Image */
+        /* Featured Image: Consistent Aspect Ratio */
         .featured-image {
+            position: relative;
             width: 100%;
-            max-width: 800px;
-            height: 400px;
-            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
-            border-radius: 15px;
-            margin: 0 auto 4rem;
+            aspect-ratio: 2 / 1; /* 2:1 ratio for header images */
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 4rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+            border-radius: 15px;
+            margin: 0 auto 4rem;
+            min-height: 0;
+            max-width: 800px;
         }
 
-        .featured-image img {
+        .featured-image img,
+        .featured-image-fallback {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: inherit;
+            background: inherit;
+        }
+
+        .featured-image-fallback {
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            z-index: 1;
         }
 
         /* Article Content */
@@ -700,9 +719,8 @@
             <!-- Featured Image -->
             <div class="container">
                 <div class="featured-image">
-                    <!-- If you have the headers.png image, uncomment the line below and remove the emoji -->
-                    <img src="../images/headers.png" alt="Education Reality Article">
-                    
+                    <img src="../images/headers.png" alt="Education Reality Article" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="featured-image-fallback" style="display: none;">📚</div>
                 </div>
             </div>
 
@@ -1027,3 +1045,5 @@
     </script>
 </body>
 </html>
+                <!-- ... rest of your content ... -->
+                <!-- (Content unchanged for brevity, as above) -->
