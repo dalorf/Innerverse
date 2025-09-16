@@ -237,14 +237,14 @@
             font-size: 4rem;
             position: relative;
         }
-        
+
         .featured-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
         }
-        
+
         .featured-image-fallback {
             width: 100%;
             height: 100%;
@@ -254,37 +254,6 @@
             background: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
             color: white;
             font-size: 4rem;
-        }
-        
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #1a365d, #2b77ad);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-         .image-fallback {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a365d, #2b77ad);
-            color: white;
-            font-size: 2rem;
         }
 
         .featured-text {
@@ -680,6 +649,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .featured-image {
+                height: 200px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
             .categories-grid {
                 grid-template-columns: 1fr;
             }
@@ -739,7 +716,7 @@
                         <span class="search-icon">🔍</span>
                         <input type="text" placeholder="Search articles..." id="searchInput">
                     </div>
-                    <div class="category-filter">
+                     <div class="category-filter">
                         <select id="categoryFilter">
                             <option value="">All Categories</option>
                             <option value="clarity">Mental Clarity</option>
@@ -918,6 +895,36 @@
                         <div class="category-name">Relationships</div>
                         <div class="category-count">7 Articles</div>
                     </div>
+
+                    <div class="category-card fade-in" data-category="clarity">
+                        <div class="category-icon">🧠</div>
+                        <div class="category-name">Mental Clarity</div>
+                        <div class="category-count">12 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="personal-growth">
+                        <div class="category-icon">🌱</div>
+                        <div class="category-name">Personal Growth</div>
+                        <div class="category-count">18 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="mindfulness">
+                        <div class="category-icon">🧘</div>
+                        <div class="category-name">Mindfulness</div>
+                        <div class="category-count">8 Articles</div>
+                    </div>
+                    
+                    <div class="category-card fade-in" data-category="education">
+                        <div class="category-icon">📚</div>
+                        <div class="category-name">Education & Career</div>
+                        <div class="category-count">5 Articles</div>
+                    </div>
+
+                     <div class="category-card fade-in" data-category="Spirituality">
+                        <div class="category-icon">🔥</div>
+                        <div class="category-name">Spirituality</div>
+                        <div class="category-count">5 Articles</div>
+                     </div>
                 </div>
             </div>
         </section>
@@ -1041,24 +1048,4 @@
         }
     </script>
 </body>
-</html>d fade-in" data-category="clarity">
-                        <div class="category-icon">🧠</div>
-                        <div class="category-name">Mental Clarity</div>
-                        <div class="category-count">12 Articles</div>
-                    </div>
-                    
-                    <div class="category-card fade-in" data-category="personal-growth">
-                        <div class="category-icon">🌱</div>
-                        <div class="category-name">Personal Growth</div>
-                        <div class="category-count">18 Articles</div>
-                    </div>
-                    
-                    <div class="category-card fade-in" data-category="mindfulness">
-                        <div class="category-icon">🧘</div>
-                        <div class="category-name">Mindfulness</div>
-                        <div class="category-count">8 Articles</div>
-                    </div>
-                    
-
-                    <div class="category-car
-
+</html>
