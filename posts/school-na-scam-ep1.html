@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond "School Na Scam" - The Series Begins - The Inner Verse Blog</title>
     <meta name="description" content="Welcome to 'Beyond School Na Scam' - a 12-part series that will transform how you think about education and success in Nigeria. Every Tuesday for the next 3 months, we're decoding the new rules of the game.">
-    <link rel="icon" href="../data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔓</text></svg>">
     <style>
         :root {
             /* Light theme variables */
@@ -52,8 +52,8 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.7;
-            overflow-x: hidden;
             transition: background 0.3s ease, color 0.3s ease;
+            /* FIXED: Removed overflow-x: hidden that was causing mobile issues */
         }
 
         .container {
@@ -68,7 +68,8 @@
             top: 50%;
             right: 20px;
             transform: translateY(-50%);
-            z-index: 1001;
+            /* FIXED: Reduced z-index to avoid conflicts */
+            z-index: 999;
             background: var(--bg-card);
             border: 2px solid var(--accent);
             border-radius: 50px;
@@ -195,10 +196,12 @@
         /* Article Header */
         .article-header {
             padding: 8rem 0 4rem;
-            margin-top: 80px;
+            /* FIXED: Removed margin-top that was conflicting with fixed nav */
             text-align: center;
             background: var(--bg-secondary);
             transition: background 0.3s ease;
+            /* FIXED: Added proper top spacing for mobile */
+            padding-top: calc(80px + 4rem);
         }
 
         .article-category {
@@ -295,6 +298,9 @@
             box-shadow: 0 20px 60px var(--shadow);
             margin-bottom: 4rem;
             transition: all 0.3s ease;
+            /* FIXED: Added proper positioning */
+            position: relative;
+            z-index: 1;
         }
 
         .article-content h2 {
@@ -772,26 +778,31 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* IMPROVED MOBILE RESPONSIVENESS */
         @media (max-width: 768px) {
+            /* FIXED: Better theme toggle positioning on mobile */
             .theme-toggle {
-                top: 100px;
+                top: 120px;
                 right: 15px;
                 width: 45px;
                 height: 45px;
                 font-size: 1rem;
+                z-index: 999;
             }
 
+            /* FIXED: Mobile navigation improvements */
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
+                right: 0;
                 width: 100%;
                 background: var(--nav-bg);
                 flex-direction: column;
                 padding: 2rem;
                 border-top: 1px solid var(--border-color);
+                box-shadow: 0 5px 20px var(--shadow);
             }
             
             .nav-links.active {
@@ -802,21 +813,62 @@
                 display: flex;
             }
 
+            /* FIXED: Mobile article spacing */
+            .article-header {
+                padding: calc(80px + 2rem) 0 2rem;
+            }
+
+            /* FIXED: Mobile content padding and spacing */
             .article-content {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.5rem;
+                margin: 2rem 0 1rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 0.8rem;
+            }
+
+            .article-content p {
+                font-size: 1rem;
+                margin-bottom: 1.2rem;
             }
 
             .article-meta {
                 flex-direction: column;
                 gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* FIXED: Mobile sections spacing */
+            .three-pillars,
+            .degree-matters,
+            .bottom-line,
+            .whats-next,
+            .discussion,
+            .comments-section {
+                margin: 1.5rem auto;
+                padding: 1rem;
             }
 
             .post-navigation {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            .nav-post {
+                padding: 1.5rem;
             }
 
             .article-cta {
-                padding: 2rem;
+                padding: 2rem 1rem;
+                margin: 2rem 0;
             }
 
             .comment-form .form-row {
@@ -843,6 +895,44 @@
             .logo-text {
                 font-size: 1.2rem;
             }
+
+            /* FIXED: Featured image mobile sizing */
+            .featured-image {
+                aspect-ratio: 16 / 9;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            /* FIXED: Better mobile typography */
+            .article-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+                line-height: 1.1;
+            }
+
+            .article-subtitle {
+                font-size: clamp(1rem, 3vw, 1.3rem);
+            }
+        }
+
+        /* ADDITIONAL MOBILE FIXES */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .article-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .article-header {
+                padding: calc(80px + 1.5rem) 0 1.5rem;
+            }
         }
     </style>
 </head>
@@ -856,18 +946,18 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <div class="logo-icon">
-                    <img src="../logo I.png" alt="The Inner Verse Logo">
+                   <img src="../logo I.png" alt="The Inner Verse Logo">
                 </div>
-                <a href="../index.html" class="logo-text">
+                <a href="#" class="logo-text">
                     THE INNER <span class="logo-verse">VERSE</span>
                 </a>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#sessions">Sessions</a></li>
-                <li><a href="../blog.html" class="active">Blog</a></li>
-                <li><a href="../blog.html" class="back-to-blog">← Back to Blog</a></li>
-                <li><a href="../index.html#contact">Register</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="#" class="active">Blog</a></li>
+                <li><a href="#" class="back-to-blog">← Back to Blog</a></li>
+                <li><a href="#contact">Register</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -934,7 +1024,7 @@
                     
                     <section class="three-pillars">
                         <div class="pill">
-                            <span class="emoji">🔋</span>
+                            <span class="emoji">📋</span>
                             <h3>Paper (Degree)</h3>
                             <p>Gets you in certain rooms (doesn't guarantee the deal)</p>
                         </div>
@@ -1050,7 +1140,7 @@
                 <div class="article-cta fade-in">
                     <h3>Ready to Find Your Clarity?</h3>
                     <p>Take the first step towards transforming confusion into purpose with our free virtual clarity session.</p>
-                    <a href="../index.html#contact" class="cta-button">Book Free Session</a>
+                    <a href="#contact" class="cta-button">Book Free Session</a>
                 </div>
 
                 <!-- Navigation to Other Posts -->
@@ -1075,10 +1165,10 @@
                     THE INNER <span style="color: #dc3545;">VERSE</span>
                 </div>
                 <div class="footer-links">
-                    <a href="../index.html">Home</a>
-                    <a href="../index.html#sessions">Sessions</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="../index.html#contact">Contact</a>
+                    <a href="#">Home</a>
+                    <a href="#sessions">Sessions</a>
+                    <a href="#">Blog</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <p>&copy; 2025 The Inner Verse. All rights reserved.</p>
             </div>
