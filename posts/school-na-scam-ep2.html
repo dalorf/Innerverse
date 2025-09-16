@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond "School Na Scam" Episode 2 - The Inner Verse Blog</title>
+    <meta name="description" content="Episode 2 of 'Beyond School Na Scam' - Discover the digital skills that are transforming Nigerian careers and opening doors to remote income opportunities.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <style>
+        :root {
+            /* Light theme variables */
+            --bg-primary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 30%, #ffffff 100%);
+            --bg-secondary: rgba(255,255,255,0.8);
+            --bg-card: white;
+            --text-primary: #1a365d;
+            --text-secondary: #4a5568;
+            --text-muted: #6b7280;
+            --border-color: rgba(0,0,0,0.1);
+            --shadow: rgba(0,0,0,0.1);
+            --shadow-hover: rgba(0,0,0,0.15);
+            --accent: #dc3545;
+            --accent-hover: #b02a37;
+            --nav-bg: rgba(255,255,255,0.95);
+        }
+
+        [data-theme="dark"] {
+            /* Dark theme variables */
+            --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #334155 100%);
+            --bg-secondary: rgba(15,23,42,0.8);
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255,255,255,0.1);
+            --shadow: rgba(0,0,0,0.3);
+            --shadow-hover: rgba(0,0,0,0.4);
+            --accent: #ef4444;
+            --accent-hover: #dc2626;
+            --nav-bg: rgba(15,23,42,0.95);
+            --categories-bg: #0f172a;
+            --newsletter-bg: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 999;
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 25px var(--shadow-hover);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo-verse {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .back-to-blog {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .back-to-blog:hover {
+            background: var(--accent-hover);
+            color: white;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: var(--bg-secondary);
+            transition: background 0.3s ease;
+            padding-top: calc(80px + 4rem);
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            border-radius: 15px;
+            margin: 0 auto 4rem;
+            min-height: 0;
+            max-width: 1300px;
+        }
+
+        .featured-image img,
+        .featured-image-fallback {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: inherit;
+            background: inherit;
+        }
+
+        .featured-image-fallback {
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            z-index: 1;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: var(--bg-card);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px var(--shadow);
+            margin-bottom: 4rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1rem;
+            line-height: 1.4;
+        }
+
+        .article-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2rem 0 0.8rem;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .article-content blockquote {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        /* Skills Breakdown Cards */
+        .skill-card {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-family: system-ui, sans-serif;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 10px 25px var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-emoji {
+            font-size: 2.5rem;
+        }
+
+        .skill-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .skill-what {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-what h4 {
+            color: var(--text-primary);
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-reality {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .reality-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .reality-item strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-pathway {
+            background: rgba(124, 58, 237, 0.1);
+            border-left: 4px solid #7c3aed;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-pathway h4 {
+            color: var(--text-primary);
+            margin: 0 0 1rem;
+        }
+
+        .pathway-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pathway-steps li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-section * {
+            color: white !important;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        /* Framework Section */
+        .framework-section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .framework-phases {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .phase {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .phase h4 {
+            color: var(--accent);
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .phase p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .phase ul {
+            margin: 0.5rem 0 0 1.2rem;
+            padding: 0;
+        }
+
+        .phase li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Action Plan */
+        .action-plan {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .action-plan h2 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .action-sections {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .action-section h4 {
+            color: var(--text-primary);
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .action-list {
+            counter-reset: action-counter;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .action-list li {
+            counter-increment: action-counter;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .action-list li::before {
+            content: counter(action-counter);
+            position: absolute;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .insight {
+            margin: 1.5rem auto;
+            max-width: 850px;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid #7c3aed;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .bottom-line, .whats-next, .discussion {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-family: system-ui, sans-serif;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .bottom-line h2, .whats-next h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .bottom-line p, .whats-next p, .discussion p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        .whats-next ul {
+            margin: 0.5rem 0 1rem 1.2rem;
+            padding: 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .whats-next li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px dashed var(--border-color);
+            margin: 2rem auto;
+            max-width: 920px;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-family: system-ui, sans-serif;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .comments-section h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comment-form h4 {
+            margin: 0 0 1rem;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .comment-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            transition: border-color 0.3s ease;
+        }
+
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .comment {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            border: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .comment-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Call-to-Action */
+        .article-cta {
+            background: var(--categories-bg, var(--text-primary));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 4rem 0;
+            transition: background 0.3s ease;
+        }
+
+        [data-theme="dark"] .article-cta {
+            background: var(--categories-bg);
+        }
+
+        .article-cta * {
+            color: white !important;
+        }
+
+        .article-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Navigation Between Posts */
+        .post-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .nav-post {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--shadow-hover);
+        }
+
+        .nav-direction {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-post-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--newsletter-bg, var(--text-primary));
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--newsletter-bg);
+        }
+
+        footer * {
+            color: white !important;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8) !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white !important;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: 120px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                z-index: 999;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                background: var(--nav-bg);
+                flex-direction: column;
+                padding: 2rem;
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 5px 20px var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+
+            .article-header {
+                padding: calc(80px + 2rem) 0 2rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .skill-card,
+            .stats-section,
+            .framework-section,
+            .action-plan,
+            .bottom-line,
+            .whats-next,
+            .discussion,
+            .comments-section {
+                margin: 1.5rem auto;
+                padding: 1rem;
+            }
+
+            .skill-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .skill-emoji {
+                font-size: 2rem;
+            }
+
+            .skill-reality {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .post-navigation {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+
+            .article-cta {
+                padding: 2rem 1rem;
+                margin: 2rem 0;
+            }
+
+            .comment-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .featured-image {
+                aspect-ratio: 16 / 9;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .article-title {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+                line-height: 1.1;
+            }
+
+            .article-subtitle {
+                font-size: clamp(1rem, 3vw, 1.3rem);
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .article-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .article-header {
+                padding: calc(80px + 1.5rem) 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+        🌙
+    </button>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                  <img src="../logo I.png" alt="The Inner Verse Logo">
+                </div>
+                <a href="#" class="logo-text">
+                    THE INNER <span class="logo-verse">VERSE</span>
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="https://dalorf.github.io/Innerverse">Home</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="https://dalorf.github.io/Innerverse/blog.html" class="active">Blog</a></li>
+                <li><a href="https://dalorf.github.io/Innerverse/blog.html" class="back-to-blog">← Back to Blog</a></li>
+                <li><a href="#contact">Register</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <header class="article-header">
+                <div class="container">
+                    <div class="article-category fade-in">Education & Career</div>
+                    
+                    <h1 class="article-title fade-in">Beyond "School Na Scam" Episode 2</h1>
+                    <h2 class="article-subtitle fade-in">The Digital Skills That Actually Pay in Nigeria</h2>
+                    
+                    <div class="article-meta fade-in">
+                        <span>📅 October 8, 2025</span>
+                        <span>⏱️ 8 min read</span>
+                        <span>👁️ 45 views</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="container">
+                <div class="featured-image fade-in">
+                    <img src="../images/headers2.png" alt="Digital Skills Article" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="featured-image-fallback" style="display: none;">💻</div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="article-content">
+                    <p><strong>Welcome back to "Beyond School Na Scam." If you missed Episode 1, catch up <a href="https://dalorf.github.io/Innerverse/posts/school-na-scam-ep1.html" style="color: var(--accent);">here</a> - we introduced the Paper + Brain + Network framework. Today we're diving deep into the "Brain" part: digital skills that are transforming Nigerian careers.</strong></p>
+
+                    <h2>Let me start with some uncomfortable facts from official sources</h2>
+                    
+                    <section class="stats-section">
+                        <h3>The Numbers That Should Wake You Up</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">9%</span>
+                                <div class="stat-label">Unemployment among graduates (NBS, Q1 2024)</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">92.7%</span>
+                                <div class="stat-label">Informal employment rate (Q2 2023)</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">600,000</span>
+                                <div class="stat-label">Graduates produced yearly</div>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 1.1rem;">Most "employed" people are in unstable, low-paying work without benefits. Meanwhile, Nigeria's 308 degree-awarding institutions keep producing graduates, but the formal economy isn't creating enough quality jobs.</p>
+                    </section>
+
+                    <p><strong>The reality:</strong> Your degree gets you into the job market, but digital skills can get you out of Nigeria's employment limitations entirely.</p>
+
+                    <h3>Why Digital Skills Are Your Best Bet</h3>
+                    <p>Here's what I've been observing on LinkedIn and Twitter: Nigerian graduates who learned digital skills are increasingly working for international companies, earning in dollars while living in Nigeria.</p>
+
+                    <blockquote class="insight">
+                        <strong>The game-changer:</strong> Digital skills are location-independent. You can serve clients in Lagos, London, or Los Angeles from your bedroom in Ibadan.
+                    </blockquote>
+
+                    <p>While your classmates compete for ₦150k office jobs in Lagos traffic, you could be earning $500-2000 monthly working remotely.</p>
+
+                    <p>Today, we're breaking down the three digital skills with the highest demand and income potential.</p>
+
+                    <hr class="divider">
+
+                    <section class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-emoji">📱</span>
+                            <h2 class="skill-title">Skill 1: Digital Marketing & Social Media Management</h2>
+                        </div>
+
+                        <div class="skill-what">
+                            <h4>What You Actually Do:</h4>
+                            <ul>
+                                <li>Create and manage social media content calendars</li>
+                                <li>Run Facebook and Instagram advertising campaigns</li>
+                                <li>Track and analyze digital marketing performance</li>
+                                <li>Help businesses increase their online visibility and sales</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-reality">
+                            <div class="reality-item">
+                                <strong>Local Market</strong>
+                                ₦150k - ₦500k+ monthly for Nigerian clients
+                            </div>
+                            <div class="reality-item">
+                                <strong>International Market</strong>
+                                $300 - $1,500+ monthly for foreign clients
+                            </div>
+                            <div class="reality-item">
+                                <strong>Time to Proficiency</strong>
+                                3-6 months with consistent practice
+                            </div>
+                            <div class="reality-item">
+                                <strong>Startup Cost</strong>
+                                ₦20k - ₦100k for courses and tools
+                            </div>
+                        </div>
+
+                        <h4>Why This Works:</h4>
+                        <p>Nigerian businesses are scrambling to get online post-COVID, but most have no idea how to do digital marketing effectively. They know they need it, they just don't know how to execute it.</p>
+                        <p>Internationally, small businesses everywhere need social media management but can't afford expensive local agencies. Nigerian digital marketers offer quality service at competitive rates.</p>
+
+                        <div class="success-pathway">
+                            <h4>Success Pathway:</h4>
+                            <ul class="pathway-steps">
+                                <li><strong>Month 1-2:</strong> Learn fundamentals, practice on personal accounts</li>
+                                <li><strong>Month 3-4:</strong> Offer services at ₦30k-50k monthly per client</li>
+                                <li><strong>Month 5-6:</strong> Charge ₦80k-150k monthly, target international clients</li>
+                                <li><strong>Month 7+:</strong> Scale to multiple clients or specialize in high-paying niches</li>
+                            </ul>
+                        </div>
+
+                        <h4>Resources:</h4>
+                        <ul>
+                            <li>Google Digital Marketing & E-commerce Course (Coursera - free)</li>
+                            <li>Facebook Blueprint (free Facebook advertising certification)</li>
+                            <li>HubSpot Academy (free inbound marketing certification)</li>
+                        </ul>
+                    </section>
+
+                    <section class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-emoji">💻</span>
+                            <h2 class="skill-title">Skill 2: Web Development & Website Creation</h2>
+                        </div>
+
+                        <div class="skill-what">
+                            <h4>What You Actually Do:</h4>
+                            <ul>
+                                <li>Build websites for businesses and individuals</li>
+                                <li>Create online stores and e-commerce platforms</li>
+                                <li>Maintain and update existing websites</li>
+                                <li>Integrate payment systems and business tools</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-reality">
+                            <div class="reality-item">
+                                <strong>Local Projects</strong>
+                                ₦50k - ₦300k per website
+                            </div>
+                            <div class="reality-item">
+                                <strong>International Projects</strong>
+                                $200 - $2,000+ per website
+                            </div>
+                            <div class="reality-item">
+                                <strong>Monthly Retainers</strong>
+                                ₦50k - ₦200k for maintenance
+                            </div>
+                            <div class="reality-item">
+                                <strong>Time to Proficiency</strong>
+                                4-8 months for functional websites
+                            </div>
+                        </div>
+
+                        <h4>Why This Works:</h4>
+                        <p>Every business needs a website, but quality web developers are still relatively scarce in Nigeria. Many businesses are stuck with terrible websites or no websites at all.</p>
+                        <p>The international demand is massive. Small businesses worldwide need websites but local developers are expensive. Nigerian developers can compete globally while offering competitive pricing.</p>
+
+                        <div class="success-pathway">
+                            <h4>Success Pathway:</h4>
+                            <ul class="pathway-steps">
+                                <li><strong>Month 1-3:</strong> Learn fundamentals, build practice websites</li>
+                                <li><strong>Month 4-5:</strong> Complete first paid projects at ₦30k-80k each</li>
+                                <li><strong>Month 6-8:</strong> Charge ₦100k-250k per website, add maintenance services</li>
+                                <li><strong>Month 9+:</strong> Target international clients, consider specialized niches</li>
+                            </ul>
+                        </div>
+
+                        <h4>Resources:</h4>
+                        <ul>
+                            <li>freeCodeCamp.org (free, comprehensive web development curriculum)</li>
+                            <li>WordPress.org (free platform with extensive documentation)</li>
+                            <li>YouTube: Traversy Media, The Net Ninja (free tutorials)</li>
+                        </ul>
+                    </section>
+
+                    <section class="skill-card">
+                        <div class="skill-header">
+                            <span class="skill-emoji">🎨</span>
+                            <h2 class="skill-title">Skill 3: Graphics Design & Visual Branding</h2>
+                        </div>
+
+                        <div class="skill-what">
+                            <h4>What You Actually Do:</h4>
+                            <ul>
+                                <li>Design logos and complete brand identity packages</li>
+                                <li>Create marketing materials (flyers, brochures, business cards)</li>
+                                <li>Design social media graphics and content templates</li>
+                                <li>Develop brand guidelines and visual standards</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-reality">
+                            <div class="reality-item">
+                                <strong>Logo Projects</strong>
+                                ₦15k - ₦100k per project
+                            </div>
+                            <div class="reality-item">
+                                <strong>Complete Brand Identity</strong>
+                                ₦80k - ₦300k per project
+                            </div>
+                            <div class="reality-item">
+                                <strong>Social Media Design</strong>
+                                ₦20k - ₦80k monthly per client
+                            </div>
+                            <div class="reality-item">
+                                <strong>Time to Proficiency</strong>
+                                2-4 months
+                            </div>
+                        </div>
+
+                        <h4>Why This Works:</h4>
+                        <p>Most Nigerian businesses have terrible visual branding. A quick look around reveals inconsistent logos, amateur flyers, and unprofessional marketing materials.</p>
+                        <p>There's also massive international demand on platforms like Fiverr, Upwork, and 99designs where Nigerian designers compete globally.</p>
+
+                        <div class="success-pathway">
+                            <h4>Success Pathway:</h4>
+                            <ul class="pathway-steps">
+                                <li><strong>Month 1-2:</strong> Learn tools and design principles</li>
+                                <li><strong>Month 3-4:</strong> Complete first projects at ₦15k-30k each</li>
+                                <li><strong>Month 5-6:</strong> Charge ₦50k-150k for brand packages</li>
+                                <li><strong>Month 7+:</strong> Develop signature style, target premium clients</li>
+                            </ul>
+                        </div>
+
+                        <h4>Resources:</h4>
+                        <ul>
+                            <li>Adobe Creative Suite (student discounts available)</li>
+                            <li>Canva Design School (free design tutorials)</li>
+                            <li>Dribbble and Behance (inspiration and portfolio hosting)</li>
+                        </ul>
+                    </section>
+
+                    <hr class="divider">
+
+                    <section class="framework-section">
+                        <h2>The Digital Skills Development Framework</h2>
+                        
+                        <div class="framework-phases">
+                            <div class="phase">
+                                <h4>Phase 1: Foundation (Months 1-2)</h4>
+                                <ul>
+                                    <li>Choose ONE skill based on your interests and current abilities</li>
+                                    <li>Invest in quality learning resources - mix of free and paid content</li>
+                                    <li>Practice daily for at least 1-2 hours consistently</li>
+                                    <li>Join online communities for learning and networking</li>
+                                    <li>Start building a portfolio with practice projects</li>
+                                </ul>
+                            </div>
+
+                            <div class="phase">
+                                <h4>Phase 2: Market Entry (Months 3-4)</h4>
+                                <ul>
+                                    <li>Offer services below market rate to gain experience</li>
+                                    <li>Focus on local clients initially for easier communication</li>
+                                    <li>Document all your work and results carefully</li>
+                                    <li>Ask for testimonials and reviews from every client</li>
+                                    <li>Network actively in relevant online communities</li>
+                                </ul>
+                            </div>
+
+                            <div class="phase">
+                                <h4>Phase 3: Scale and Optimize (Months 5+)</h4>
+                                <ul>
+                                    <li>Increase rates based on experience and demand</li>
+                                    <li>Target international clients for higher income potential</li>
+                                    <li>Develop systems to handle multiple projects efficiently</li>
+                                    <li>Consider specializing in profitable niches</li>
+                                    <li>Build recurring revenue through maintenance or retainer agreements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h3>Critical Success Factors</h3>
+                    
+                    <h4>1. Start Before You Feel Ready</h4>
+                    <p>Most people wait until they're "perfect" before taking their first client. Start charging once you can solve basic problems, then improve through real work.</p>
+
+                    <h4>2. Focus on Results, Not Hours</h4>
+                    <p>Clients pay for outcomes. Always measure and communicate the value you're creating - increased sales, better user experience, professional appearance.</p>
+
+                    <h4>3. Build While You Learn</h4>
+                    <p>Create your portfolio as you develop skills. Document your progress publicly - it attracts clients and opportunities.</p>
+
+                    <h4>4. Think Global from Day One</h4>
+                    <p>Nigerian purchasing power is limited. International clients often pay 3-5x more for the same work.</p>
+
+                    <hr class="divider">
+
+                    <section class="action-plan">
+                        <h2>Your Week 1 Action Plan</h2>
+                        
+                        <div class="action-sections">
+                            <div class="action-section">
+                                <h4>Choose Your Path:</h4>
+                                <ol class="action-list">
+                                    <li>Review the three skills above and pick the one that interests you most</li>
+                                    <li>Research current demand by checking job boards and freelance platforms</li>
+                                    <li>Commit to 6 months of focused learning and practice</li>
+                                </ol>
+                            </div>
+
+                            <div class="action-section">
+                                <h4>Start Learning:</h4>
+                                <ol class="action-list">
+                                    <li>Sign up for your first course or tutorial series</li>
+                                    <li>Set up daily practice time - even 1 hour makes a difference</li>
+                                    <li>Join relevant communities for your chosen skill</li>
+                                    <li>Create accounts on portfolio platforms (Behance, GitHub, LinkedIn)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bottom-line">
+                        <h2>The Bottom Line</h2>
+                        <p>Digital skills offer the fastest path to location-independent income for Nigerian graduates.</p>
+                        <p>While your degree provides credibility, these skills provide immediate earning potential and global opportunities.</p>
+                        <p>The barrier to entry is lower than traditional employment, the income potential is higher, and you're not limited by Nigeria's economic constraints.</p>
+                        <p><strong>The question isn't whether digital skills work - it's whether you're willing to invest the time to develop them.</strong></p>
+                    </section>
+
+                    <hr class="divider">
+
+                    <section class="whats-next">
+                        <h2>What's Coming Next</h2>
+                        <p><strong>Episode 3 (Next Tuesday):</strong> <em>"The Business Skills That Pay: Sales, Project Management & Content Creation"</em></p>
+                        <ul>
+                            <li>Skills that work in any industry</li>
+                            <li>How to get started without technical knowledge</li>
+                            <li>Building service-based businesses around your expertise</li>
+                        </ul>
+                        <p><strong>Episode 4:</strong> <em>"The Network Effect: Why Your Classmates Matter More Than Your Grades"</em></p>
+                        <div class="cta">
+                            <button onclick="subscribeToNewsletter()" class="btn">SUBSCRIBE TO THE SERIES</button>
+                            <button onclick="shareArticle()" class="btn">SHARE YOUR CHOSEN SKILL</button>
+                            <button onclick="scrollToComments()" class="btn">JOIN THE DISCUSSION</button>
+                        </div>
+                    </section>
+
+                    <hr class="divider">
+
+                    <section class="discussion">
+                        <p><strong>Which digital skill resonates most with your interests?</strong></p>
+                        <p><strong>What's your biggest concern about getting started with international clients?</strong></p>
+                        <p>Let's discuss your specific situation below.</p>
+                        
+                        <!-- Comments Section -->
+                        <div class="comments-section" id="comments-section">
+                            <h3>Comments</h3>
+                            
+                            <!-- Comment Form -->
+                            <div class="comment-form">
+                                <h4>Leave a Comment</h4>
+                                <form id="commentForm">
+                                    <div class="form-row">
+                                        <input type="text" id="commentName" placeholder="Your Name" required>
+                                        <input type="email" id="commentEmail" placeholder="Your Email (won't be published)" required>
+                                    </div>
+                                    <textarea id="commentText" placeholder="Share your thoughts about digital skills..." rows="4" required></textarea>
+                                    <button type="submit" class="btn">Post Comment</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Comments Display -->
+                            <div class="comments-list" id="commentsList">
+                                <!-- Sample comment to show structure -->
+                                <div class="comment">
+                                    <div class="comment-header">
+                                        <strong class="comment-author">Tech Enthusiast</strong>
+                                        <span class="comment-date">1 hour ago</span>
+                                    </div>
+                                    <p class="comment-text">I'm torn between web development and digital marketing. Both seem promising but I don't know which to focus on first.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="article-cta fade-in">
+                    <h3>Ready to Start Your Digital Skills Journey?</h3>
+                    <p>Get personalized guidance on choosing the right digital skill for your situation and career goals.</p>
+                    <a href="#contact" class="cta-button">Book Free Consultation</a>
+                </div>
+
+                <!-- Navigation Between Posts -->
+                <div class="post-navigation fade-in">
+                    <a href="https://dalorf.github.io/Innerverse/posts/school-na-scam-ep1.html" class="nav-post">
+                        <div class="nav-direction">← Previous</div>
+                        <div class="nav-post-title">Episode 1: The New Reality of Education</div>
+                    </a>
+                    <a href="#" class="nav-post">
+                        <div class="nav-direction">Next →</div>
+                        <div class="nav-post-title">Episode 3: Business Skills That Pay</div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    THE INNER <span style="color: #dc3545;">VERSE</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://dalorf.github.io/Innerverse">Home</a>
+                    <a href="#sessions">Sessions</a>
+                    <a href="https://dalorf.github.io/Innerverse/blog.html">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <p>&copy; 2025 The Inner Verse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        
+        // Update toggle button icon based on current theme
+        function updateThemeIcon() {
+            const theme = body.getAttribute('data-theme');
+            themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+        
+        updateThemeIcon();
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        });
+
+        // Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                // Animate hamburger menu
+                mobileMenu.classList.toggle('active');
+            });
+        }
+
+        // Newsletter Subscription Function
+        function subscribeToNewsletter() {
+            const email = prompt("Enter your email to subscribe to our 'Beyond School Na Scam' series:");
+            if (email && email.includes('@')) {
+                alert(`Thank you! We've added ${email} to our newsletter. You'll receive updates about new episodes every Tuesday.`);
+            } else if (email) {
+                alert("Please enter a valid email address.");
+            }
+        }
+
+        // Share Article Function
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: 'Check out Episode 2 of "Beyond School Na Scam" - Digital Skills That Actually Pay in Nigeria!',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert("Article link copied to clipboard! Share it with your friends who need to see this.");
+                }).catch(() => {
+                    const shareText = `Check out: "${document.title}" - ${window.location.href}`;
+                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+                    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+                    
+                    const choice = confirm("Share via WhatsApp? (Cancel for Twitter)");
+                    if (choice) {
+                        window.open(whatsappUrl, '_blank');
+                    } else {
+                        window.open(twitterUrl, '_blank');
+                    }
+                });
+            }
+        }
+
+        // Scroll to Comments Function
+        function scrollToComments() {
+            document.getElementById('comments-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Comment System
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('schoolNaScamEp2Comments') || '[]');
+            displayComments(comments);
+        }
+
+        function saveComments(comments) {
+            localStorage.setItem('schoolNaScamEp2Comments', JSON.stringify(comments));
+        }
+
+        function displayComments(comments) {
+            const existingComments = commentsList.querySelectorAll('.comment:not(.sample)');
+            existingComments.forEach(comment => comment.remove());
+            
+            comments.forEach(comment => {
+                const commentElement = createCommentElement(comment);
+                commentsList.appendChild(commentElement);
+            });
+        }
+
+        function createCommentElement(comment) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `
+                <div class="comment-header">
+                    <strong class="comment-author">${escapeHtml(comment.name)}</strong>
+                    <span class="comment-date">${getTimeAgo(comment.timestamp)}</span>
+                </div>
+                <p class="comment-text">${escapeHtml(comment.text)}</p>
+            `;
+            return commentDiv;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getTimeAgo(timestamp) {
+            const now = new Date();
+            const commentTime = new Date(timestamp);
+            const diffMinutes = Math.floor((now - commentTime) / (1000 * 60));
+            
+            if (diffMinutes < 1) return 'Just now';
+            if (diffMinutes < 60) return `${diffMinutes} minutes ago`;
+            if (diffMinutes < 1440) return `${Math.floor(diffMinutes / 60)} hours ago`;
+            return `${Math.floor(diffMinutes / 1440)} days ago`;
+        }
+
+        if (commentForm) {
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('commentName').value.trim();
+                const email = document.getElementById('commentEmail').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+                
+                if (name && email && text) {
+                    const comments = JSON.parse(localStorage.getItem('schoolNaScamEp2Comments') || '[]');
+                    const newComment = {
+                        name: name,
+                        email: email,
+                        text: text,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    comments.unshift(newComment);
+                    saveComments(comments);
+                    displayComments(comments);
+                    
+                    commentForm.reset();
+                    alert('Thank you for sharing your thoughts! Your comment has been posted.');
+                    
+                    setTimeout(() => {
+                        commentsList.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComments();
+        });
+    </script>
+</body>
+</html>
